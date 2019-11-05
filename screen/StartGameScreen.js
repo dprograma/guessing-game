@@ -8,7 +8,7 @@ import Input from '../components/Input';
 const StartGameScreen = props => {
     const [enteredValue, setEnteredValue] = useState('');
 
-    const numberInputHandler = inputInput => {
+    const numberInputHandler = inputText => {
         setEnteredValue(inputText.replace(/[^0-9]/g, ''));
     };
 
@@ -50,7 +50,7 @@ const StartGameScreen = props => {
                 <Text style={styles.title}>Start a New Game</Text>
                 <Card style={styles.inputContainer}>
                     <Text>Select a Number</Text>
-                    <Input style={styles.input} blurOnSubmit autoCapitalize="none" autoCorrect={false} keyboardType="Number-pad" maxLength={2} onChangeText={numberInputHandler} value={enteredValue} />
+                    <Input style={styles.input} blurOnSubmit autoCapitalize="none" autoCorrect={false} keyboardType="number-pad" maxLength={2} onChangeText={numberInputHandler} value={enteredValue} />
                     <View style={styles.buttonContainer}>
                         <View style={styles.button}>
                             <Button title="Reset" onPress={resetInputHandler} color={Color.accent} />
